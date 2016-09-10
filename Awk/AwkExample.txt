@@ -1,0 +1,53 @@
+﻿1.Awk reads the input files one line at a time.
+2.Each statement in Actions should be delimited by semicolon.
+
+Syntax:
+
+awk '/search_pattern1/ {Actions;}
+     /search_pattern2/ {Actions;}' file
+
+
+ ===>>search_pattern--->regular expression--->>/Thomas/
+
+Examples:
+
+100  Thomas  Manager    Sales       $5,000
+200  Jason   Developer  Technology  $5,500
+300  Sanjay  Sysadmin   Technology  $7,000
+400  Nisha   Manager    Marketing   $9,500
+500  Randy   DBA        Technology  $6,000
+
+
+1.awk '{print;}' AwkExample.txt -->> (print prints all the line)
+
+100  Thomas  Manager    Sales       $5,000
+200  Jason   Developer  Technology  $5,500
+300  Sanjay  Sysadmin   Technology  $7,000
+400  Nisha   Manager    Marketing   $9,500
+500  Randy   DBA        Technology  $6,000
+
+2.awk '/Thomas/' AwkExample.txt  
+
+100  Thomas  Manager    Sales       $5,000
+
+3. awk '/Thomas/    
+ /Nisha/' AwkExample.txt  (patterns and its corresponding actions has to be separated by newline.)
+100  Thomas  Manager    Sales       $5,000
+400  Nisha   Manager    Marketing   $9,500
+
+4. awk '{print $1,$2,$NF;}' AwkExample.txt (NF last column)
+100 Thomas $5,000
+200 Jason $5,500
+300 Sanjay $7,000
+400 Nisha $9,500 
+500 Randy $6,000
+
+5.awk 'BEGIN {print "Name\tDesignation\tDepartment\tSalary";}
+> {print $2,"\t",$3,"\t",$4,"\t",$NF;}
+> END{print "Report Generated\n--------------";
+> }'AwkExample.txt
+
+6.awk '$NF > 7000' AwkExample.txt
+
+7.awk '$4 ~/Technology/' AwkExample.txt===>>(~) is used for comparison regular expression
+

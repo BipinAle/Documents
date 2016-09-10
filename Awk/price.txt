@@ -1,0 +1,80 @@
+1 Linux-programming 2 450
+2 Advanced-Linux 3 300
+3 Computer-Networks 4 400
+4 OOAD&UML 3 450
+5 Java2 5 200
+
+1. awk 'BEGIN{print "SN \t Book Name \t Quantity \t price \t Total"}{print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $3*$4}' price.txt 
+O/P:
+
+SN 	 Book Name 	 Quantity 	 price 	 Total
+1	Linux-programming	2	450	900
+2	Advanced-Linux	3	300	900
+3	Computer-Networks	4	400	1600
+4	OOAD&UML	3	450	1350
+5	Java2	5	200	1000
+
+
+2.awk '/a/{++cnt} END {print "Count = ", cnt}'
+	a occur ko count print garcha
+
+3. awk 'length($0)>14' price.txt
+	line greater than 14 is printed 
+
+4.awk 'BEGIN{IGNORECASE = 1} /amit/' price.txt
+<<<<<<<<<<==============>>>>>>>>>>>>>>>>>>>>
+Regular Expression
+
+a.echo -e "cat\nbat\nfun\nfin\nfan" | awk '/f.n/' ==>anything in betn f and n
+		
+fun
+fin
+fan
+
+b.echo -e "This\nThat\nThere\nTheir\nthese" | awk '/^The/'  ==>>start of reg expression
+There
+Their
+
+C.echo -e "knife\nknow\nfun\nfin\nfan\nnine" | awk '/n$/'  ===>>last ma n vako
+
+fun
+fin
+fan
+
+D.echo -e "Call\nTall\nBall" | awk '/[CT]all/'  ===>>C or T 
+
+Call
+Tall
+
+E.echo -e "Call\nTall\nBall" | awk '/[^CT]all/'===>>not C nor T
+
+Ball
+
+F.echo -e "Call\nTall\nBall\nSmall\nShall" | awk '/Call|Ball/'
+
+Call
+Ball
+
+F.echo -e "Colour\nColor" | awk '/Colou?r/'  ===>>u is optional
+
+Colour
+Color
+
+G.echo -e "ca\ncat\ncatt" | awk '/cat*/'
+
+ca
+cat
+catt
+
+H.echo -e "111\n22\n123\n234\n456\n222"  | awk '/2+/'
+
+22
+123
+234
+222
+
+I.echo -e "Apple Juice\nApple Pie\nApple Tart\nApple Cake" | awk 
+   '/Apple (Juice|Cake)/'
+
+Apple Juice
+Apple Cake

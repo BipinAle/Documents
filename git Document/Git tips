@@ -1,0 +1,18 @@
+1.ssh-keygen===>>this command generate the ssh key
+2.ssh -T git@gitlab.com===>>after pasting key in gitlab..dont need to type username and password
+3. git remote add origin git@github.com:BipinAle/FootballApp.git==>>naya remote add garey ko
+4.git checkout -b "branchname"==>>naming and creating branchname
+5.git branch==>>listing branch
+6.git push origin branchName==>>push command
+
+
+
+ssh key generate
+home ko .ssh ma janey
+ssh-keygen
+.pub lai cat garney
+copy that key
+github ko setting -->ssh and gpg keys-->new -->save
+
+to check it is successful
+ssh -T git@github.com-->>

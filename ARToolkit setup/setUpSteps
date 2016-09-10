@@ -1,0 +1,11 @@
+1.Extract the zip and place it inside AndroidStudioProjects
+2.Go to terminal and build , build.sh and build_native_examples.sh(/home/bipin/AndroidStudioProjects/ARToolKit5-bin-5.3.2-Android/android )
+         navigate to android folder and 
+         type ./build.sh
+	 prior to building another .sh file, setup NDK path inside (nano)build_native_examples.sh file(replace $NDK with full path to NDK
+	 in my case: /home/bipin/Android/Sdk/ndk-bundle)
+
+
+3.Bring required projects from extracted folder to home AndroidStudioprojects folder.
+4.Now you are good to go.
+			
